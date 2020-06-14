@@ -12,19 +12,14 @@ def load_library(file)
       japanese: test[x][1]
     }
   }
-  puts formatted_file
   formatted_file
 end
 
 def get_japanese_emoticon(file, emoticon)
   # code goes here
   library = load_library(file)
-  #puts library
   library.each{|x,y|
-    #puts y[:english]
     if y[:english] == emoticon
-      #puts "entered conditional loop"
-      #puts y[:japanese]
       return y[:japanese]
     end
   }
@@ -32,10 +27,8 @@ def get_japanese_emoticon(file, emoticon)
 end
 
 def get_english_meaning(file, emoticon)
-  # code goes here
   load_library(file).each {|x,y|
     if y[:japanese] == emoticon
-      puts "loop worked!"
       return x
     end
   }
